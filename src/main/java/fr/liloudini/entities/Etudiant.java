@@ -1,5 +1,7 @@
 package fr.liloudini.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,12 +14,12 @@ public class Etudiant {
 	private Long id;
 	private String nom;
 	private String prenom;
-	private String dateNaiss;
+	private Date dateNaiss;
 	public Etudiant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Etudiant(String nom, String prenom, String dateNaiss) {
+	public Etudiant(String nom, String prenom, Date dateNaiss) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -41,10 +43,10 @@ public class Etudiant {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getDateNaiss() {
+	public Date getDateNaiss() {
 		return dateNaiss;
 	}
-	public void setDateNaiss(String dateNaiss) {
+	public void setDateNaiss(Date dateNaiss) {
 		this.dateNaiss = dateNaiss;
 	}
 	
