@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+
+<link rel="stylesheet" type="text/css" href="..css/style.css" th:href="@{/css/style.css}"/>
+<title>Gestion des Etudiants</title>
+</head>
+<body>
+	<div class="container espace-haut-20">
+		<table class="table table-striped">
+			<thead>
+				<th>Id</th><th>Nom</th><th>Prenom</th><th>Naissance</th>
+			</thead>
+			<tbody>
+				<tr th:each="et:${etudiants}">
+					<td th:text="${et.id}"></td> 
+					<td th:text="${et.nom}"></td>
+					<td th:text="${et.prenom}"></td>
+					<td th:text="${et.dateNaiss}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
