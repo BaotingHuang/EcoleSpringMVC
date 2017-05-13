@@ -14,7 +14,7 @@
 				<th>Id</th><th>Nom</th><th>Prenom</th><th>Naissance</th>
 			</thead>
 			<tbody>
-				<tr th:each="et:${etudiants}">
+				<tr th:each="et:${etudiants.content}">
 					<td th:text="${et.id}"></td> 
 					<td th:text="${et.nom}"></td>
 					<td th:text="${et.prenom}"></td>
@@ -22,6 +22,23 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	<div class="container espace-haut-20">
+	<nav aria-label="Page navigation">
+		<ul class="pagination">
+			<li>
+		      <a aria-label="Previous" th:class="${pageCourante==0}?hidden:''" th:href="@{etudiants(pc=${pageCourante-1})}">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		  <li th:each="page:${pages}" th:class="${pageCourante==page}?active:''"><a th:href="@{etudiants(pc=${page})}" th:text="${page}"></a></li>
+		   <li>
+		      <a aria-label="Next" th:href="@{etudiants(pc=${pageLast-1})}" th:class="${pageCourante==pageLast-1}?hidden:''">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		</ul>
+		</nav>
 	</div>
 </body>
 </html>
